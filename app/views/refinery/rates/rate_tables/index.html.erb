@@ -1,8 +1,8 @@
 <% content_for :body do %>
   <ul id="rates">
-    <% @rates.each do |rate| %>
+    <% @rate_tables.each do |rate_table| %>
       <li>
-        <%= link_to rate.title, refinery.rates_rate_path(rate) %>
+        <%= link_to rate_table.title, refinery.rates_rate_table_path(rate_table) %>
       </li>
     <% end %>
   </ul>

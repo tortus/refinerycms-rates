@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.require_paths     = %w(lib)
   s.files             = `git ls-files`.split($/)
-  s.test_files        = spec.files.grep(%r{^(test|spec|features)/})
+  s.test_files        = s.files.grep(%r{^(test|spec|features)/})
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 2.1.2'

@@ -12,6 +12,10 @@ module Refinery
       validates :title, :presence => true, :length => {:maximum => 255}
       validates :category, :length => {:maximum => 255, allow_blank: true}
 
+      def self.ordered
+        order('category ASC, title ASC')
+      end
+
       CATEGORIES = ['Dividend Rates', 'Loan Rates', 'Mortgage Rates']
 
       def category_options

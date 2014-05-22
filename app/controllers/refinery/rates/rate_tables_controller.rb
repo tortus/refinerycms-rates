@@ -1,8 +1,8 @@
 module Refinery
   module Rates
-    class RatesController < ::ApplicationController
+    class RateTablesController < ::ApplicationController
 
-      before_filter :find_all_rates
+      before_filter :find_all_rate_tables
       before_filter :find_page
 
       def index
@@ -12,7 +12,7 @@ module Refinery
       end
 
       def show
-        @rate = Rate.find(params[:id])
+        @rate_table = RateTable.find(params[:id])
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @rate in the line below:
@@ -21,8 +21,8 @@ module Refinery
 
     protected
 
-      def find_all_rates
-        @rates = Rate.order('position ASC')
+      def find_all_rate_tables
+        @rate_tables = RateTable.ordered
       end
 
       def find_page

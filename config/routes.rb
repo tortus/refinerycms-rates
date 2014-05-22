@@ -2,7 +2,8 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
   namespace :rates do
-    resources :rates, :path => '', :only => [:index, :show]
+    root :to => 'rate_tables#index'
+    resources :rate_tables, :path => '', :only => [:index, :show]
   end
 
   # Admin routes
