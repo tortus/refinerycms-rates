@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      rates:
+        title: Rates
+    rates:
+      admin:
+        rates:
+          actions:
+            create_new: Přidat Rate
+            reorder: Řadit Rates
+            reorder_done: Konec řazení Rates
+          records:
+            title: Rates
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Rates. Zvolte "Přidat Rate" pro přidání prvního rate.
+          rate:
+            view_live_html: Zobrazit náhled rate<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit rate
+            delete: Smazat rate
+      rates:
+        show:
+          other: Další Rates
+  activerecord:
+    attributes:
+      'refinery/rates/rate':
+        title: Title
+        category: Category
+        content: Content

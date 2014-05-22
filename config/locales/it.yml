@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      rates:
+        title: Rates
+    rates:
+      admin:
+        rates:
+          actions:
+            create_new: Aggiungi Nuovo Rate
+            reorder: Riordina Rates
+            reorder_done: Termina il Riordino di Rates
+          records:
+            title: Rates
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Rates. Clicca "Aggiungi Nuovo Rate" per aggiungere il tuo primo rate.
+          rate:
+            view_live_html: Guarda live questo rate <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo rate
+            delete: Rimuovi per sempre questo rate
+      rates:
+        show:
+          other: Altri Rates
+  activerecord:
+    attributes:
+      'refinery/rates/rate':
+        title: Title
+        category: Category
+        content: Content

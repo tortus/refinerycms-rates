@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="rates">
+    <% @rates.each do |rate| %>
+      <li>
+        <%= link_to rate.title, refinery.rates_rate_path(rate) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

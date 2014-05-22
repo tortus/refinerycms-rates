@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      rates:
+        title: Rates
+    rates:
+      admin:
+        rates:
+          actions:
+            create_new: Nieuwe Rate toevoegen
+            reorder: De volgorde van de Rates wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Rate-volgorde
+          records:
+            title: Rates
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Rates. Druk op 'Nieuwe Rate toevoegen' om de eerste toe te voegen.
+          rate:
+            view_live_html: Deze rate op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze rate
+            delete: Deze rate definitief verwijderen
+      rates:
+        show:
+          other: Andere Rates
+  activerecord:
+    attributes:
+      'refinery/rates/rate':
+        title: Title
+        category: Category
+        content: Content

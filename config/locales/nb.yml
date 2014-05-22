@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      rates:
+        title: Rates
+    rates:
+      admin:
+        rates:
+          actions:
+            create_new: Lag en ny Rate
+            reorder: Endre rekkefølgen på Rates
+            reorder_done: Ferdig å endre rekkefølgen Rates
+          records:
+            title: Rates
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Rates enda. Klikk på "Lag en ny Rate" for å legge til din første rate.
+          rate:
+            view_live_html: Vis hvordan denne rate ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne rate
+            delete: Fjern denne rate permanent
+      rates:
+        show:
+          other: Andre Rates
+  activerecord:
+    attributes:
+      'refinery/rates/rate':
+        title: Title
+        category: Category
+        content: Content

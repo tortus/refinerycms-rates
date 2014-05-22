@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      rates:
+        title: Rates
+    rates:
+      admin:
+        rates:
+          actions:
+            create_new: 建立新的 Rate
+            reorder: 对 Rates 重新排序
+            reorder_done: 对 Rates 的重新排序结束
+          records:
+            title: Rates
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Rates yet. Click "Add New Rate" to add your first rate.
+            no_items_yet: 目前没有 Rates . 点击 "Add New Rate" 创建一个rate.
+          rate:
+            view_live_html: 查看 rate 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 rate
+            delete: 永久删除 rate
+      rates:
+        show:
+          other: 其他 Rates
+  activerecord:
+    attributes:
+      'refinery/rates/rate':
+        title: Title
+        category: Category
+        content: Content
