@@ -1,7 +1,8 @@
 <ul id='sortable_list'>
   <% @rate_tables.to_a.group_by(&:category).each do |category, rate_tables| -%>
-    <h2><%= category %></h2>
+    <h2><%= category.presence || "Uncategorized" %></h2>
     <%= render :partial => 'rate_table', :collection => rate_tables %>
+    <br>
   <% end -%>
 </ul>
 <%= render '/refinery/admin/sortable_list',
