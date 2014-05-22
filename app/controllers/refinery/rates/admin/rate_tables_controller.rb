@@ -5,7 +5,8 @@ module Refinery
 
         crudify :'refinery/rates/rate_table',
                 :xhr_paging => false,
-                :order => 'category ASC, title ASC'
+                :order => 'category ASC, title ASC',
+                :sortable => false
 
       end
     end
