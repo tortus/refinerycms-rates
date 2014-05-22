@@ -8,8 +8,10 @@ Gem::Specification.new do |s|
   s.date              = '2014-05-22'
   s.summary           = 'Rates extension for Refinery CMS'
   s.authors           = ['William Makley']
+
   s.require_paths     = %w(lib)
-  s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md", "license.md"]
+  s.files             = `git ls-files`.split($/)
+  s.test_files        = spec.files.grep(%r{^(test|spec|features)/})
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 2.1.2'
