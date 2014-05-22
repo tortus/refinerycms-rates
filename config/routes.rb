@@ -8,10 +8,9 @@ Refinery::Core::Engine.routes.draw do
   # Admin routes
   namespace :rates, :path => '' do
     namespace :admin, :path => Refinery::Core.backend_route do
-      resources :rate_tables, :except => :show do
-        collection do
-          post :update_positions
-        end
+      scope :path => 'rates' do
+        root :to => 'rate_tables#index'
+        resources :rate_tables, :except => :show
       end
     end
   end
