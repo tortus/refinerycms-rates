@@ -5,6 +5,7 @@ class CreateRatesRateTables < ActiveRecord::Migration
       t.string :title
       t.string :category
       t.text :content
+      t.string :slug
       t.integer :position
 
       t.timestamps
