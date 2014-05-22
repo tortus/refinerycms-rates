@@ -5,7 +5,7 @@ sk:
         title: Rates
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
             create_new: Pridať Rate
             reorder: Preusporiadať Rates
@@ -14,7 +14,7 @@ sk:
             title: Rates
             sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
             no_items_yet: Nie sú vytvorené žiadne Rates. Kliknite na "Pridať Rate" pre pridanie prvého rate.
-          rate:
+          rate_table:
             view_live_html: Zobraziť náhľad rate<br/><em>(otvorí sa v novom okne)</em>
             edit: Upraviť rate
             delete: Zmazať rate
@@ -23,7 +23,7 @@ sk:
           other: Daľšie Rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

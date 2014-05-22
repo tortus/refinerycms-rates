@@ -5,7 +5,7 @@ nl:
         title: Rates
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
             create_new: Nieuwe Rate toevoegen
             reorder: De volgorde van de Rates wijzigen
@@ -14,7 +14,7 @@ nl:
             title: Rates
             sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
             no_items_yet: Er zijn nog geen Rates. Druk op 'Nieuwe Rate toevoegen' om de eerste toe te voegen.
-          rate:
+          rate_table:
             view_live_html: Deze rate op de website bekijken <br/><em>(opent in een nieuw venster)</em>
             edit: Bewerk deze rate
             delete: Deze rate definitief verwijderen
@@ -23,7 +23,7 @@ nl:
           other: Andere Rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

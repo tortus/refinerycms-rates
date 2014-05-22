@@ -5,7 +5,7 @@ zh-CN:
         title: Rates
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
             create_new: 建立新的 Rate
             reorder: 对 Rates 重新排序
@@ -16,16 +16,16 @@ zh-CN:
 
             # There are no Rates yet. Click "Add New Rate" to add your first rate.
             no_items_yet: 目前没有 Rates . 点击 "Add New Rate" 创建一个rate.
-          rate:
+          rate_table:
             view_live_html: 查看 rate 的最新内容.<br/><em>(新窗口中打开)</em>
             edit: 编辑 rate
             delete: 永久删除 rate
-      rates:
+      rate:
         show:
           other: 其他 Rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

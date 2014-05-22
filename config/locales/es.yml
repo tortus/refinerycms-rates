@@ -6,7 +6,7 @@ es:
 #        article: masculino/femenino
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
             create_new: Crear nuevo rate
             reorder: Reordenar rates
@@ -15,7 +15,7 @@ es:
             title: Rates
             sorry_no_results: Lo siento, no hay resultados
             no_items_yet: No hay rates todavía. Pulsa en "Crear nuevo Rate" para crear tu primer rate.
-          rate:
+          rate_table:
             view_live_html: Ver este rate como abierto al público <br/><em>(abre en ventana nueva)</em>
             edit: Editar este rate
             delete: Borrar este rate para siempre
@@ -24,7 +24,7 @@ es:
           other: Otros rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

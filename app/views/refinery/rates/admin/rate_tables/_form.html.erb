@@ -1,6 +1,6 @@
-<%= form_for [refinery, :rates_admin, @rate] do |f| -%>
+<%= form_for [refinery, :rates_admin, @rate_table] do |f| -%>
   <%= render '/refinery/admin/error_messages',
-              :object => @rate,
+              :object => @rate_table,
               :include_object_name => true %>
 
   <div class='field'>
@@ -10,20 +10,20 @@
 
   <div class='field'>
     <%= f.label :category -%>
-    <%= f.text_field :category -%>
+    <%= f.select :category, @rate_table.category_options, :include_blank => true -%>
   </div>
 
   <div class='field'>
     <%= render '/refinery/admin/wysiwyg',
                 :f => f,
                 :fields => [:content],
-                :object => "rates/rate" -%>
+                :object => "rates/rate_table" -%>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
-             :delete_title => t('delete', :scope => 'refinery.rates.admin.rates.rate'),
-             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @rate.title) -%>
+             :delete_title => t('delete', :scope => 'refinery.rates.admin.rates.rate_table'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @rate_table.title) -%>
 <% end -%>
 
 <% content_for :javascripts do -%>

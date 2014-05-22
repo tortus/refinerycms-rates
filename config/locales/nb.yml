@@ -5,7 +5,7 @@ nb:
         title: Rates
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
             create_new: Lag en ny Rate
             reorder: Endre rekkefølgen på Rates
@@ -14,7 +14,7 @@ nb:
             title: Rates
             sorry_no_results: Beklager! Vi fant ikke noen resultater.
             no_items_yet: Det er ingen Rates enda. Klikk på "Lag en ny Rate" for å legge til din første rate.
-          rate:
+          rate_table:
             view_live_html: Vis hvordan denne rate ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
             edit: Rediger denne rate
             delete: Fjern denne rate permanent
@@ -23,7 +23,7 @@ nb:
           other: Andre Rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

@@ -9,12 +9,12 @@ module Refinery
       before_inclusion do
         Refinery::Plugin.register do |plugin|
           plugin.name = "rates"
-          plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.rates_admin_rates_path }
+          plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.rates_admin_rate_tables_path }
           plugin.pathname = root
           plugin.activity = {
-            :class_name => :'refinery/rates/rate'
+            :class_name => :'refinery/rates/rate_table'
           }
-          
+
         end
       end
 

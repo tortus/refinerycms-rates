@@ -1,7 +1,7 @@
 module Refinery
   module Rates
     module Admin
-      class RatesController < ::Refinery::AdminController
+      class RateTablesController < ::Refinery::AdminController
 
         crudify :'refinery/rates/rate_table',
                 :xhr_paging => false,

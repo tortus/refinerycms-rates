@@ -2,10 +2,10 @@ require 'spec_helper'
 
 module Refinery
   module Rates
-    describe Rate do
+    describe RateTable do
       describe "validations" do
         subject do
-          FactoryGirl.create(:rate,
+          FactoryGirl.create(:rate_table,
           :title => "Refinery CMS")
         end
 

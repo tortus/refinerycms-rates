@@ -5,7 +5,7 @@ it:
         title: Rates
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
             create_new: Aggiungi Nuovo Rate
             reorder: Riordina Rates
@@ -14,7 +14,7 @@ it:
             title: Rates
             sorry_no_results: "Spiacenti! Nessun risultato trovato"
             no_items_yet: Non ci sono ancora Rates. Clicca "Aggiungi Nuovo Rate" per aggiungere il tuo primo rate.
-          rate:
+          rate_table:
             view_live_html: Guarda live questo rate <br/><em>(apre una nuova finestra)</em>
             edit: Modifica questo rate
             delete: Rimuovi per sempre questo rate
@@ -23,7 +23,7 @@ it:
           other: Altri Rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

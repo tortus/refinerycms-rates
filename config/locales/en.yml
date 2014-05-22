@@ -5,16 +5,16 @@ en:
         title: Rates
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
-            create_new: Add New Rate
-            reorder: Reorder Rates
+            create_new: Add New Rate Table
+            reorder: Reorder Rate
             reorder_done: Done Reordering Rates
           records:
             title: Rates
             sorry_no_results: Sorry! There are no results found.
             no_items_yet: There are no Rates yet. Click "Add New Rate" to add your first rate.
-          rate:
+          rate_table:
             view_live_html: View this rate live <br/><em>(opens in a new window)</em>
             edit: Edit this rate
             delete: Remove this rate forever
@@ -23,7 +23,7 @@ en:
           other: Other Rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

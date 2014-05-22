@@ -5,7 +5,7 @@ tr:
         title: Rates
     rates:
       admin:
-        rates:
+        rate_tables:
           actions:
             create_new: Yeni Ekle Rate
             reorder: Tekrar sirala Rates
@@ -14,7 +14,7 @@ tr:
             title: Rates
             sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
             no_items_yet: Herhangi bir Rates yok henuz.  Tikla "Yeni Ekle Rate" eklemek senin ilk rate.
-          rate:
+          rate_table:
             view_live_html: Bunu canlu rate goruntule <br/><em>(yeni bir pencerede acar)</em>
             edit: Bunu Duzenle rate
             delete: Bunu Sil rate sonsuza dek
@@ -23,7 +23,7 @@ tr:
           other: Diger Rates
   activerecord:
     attributes:
-      'refinery/rates/rate':
+      'refinery/rates/rate_table':
         title: Title
         category: Category
         content: Content

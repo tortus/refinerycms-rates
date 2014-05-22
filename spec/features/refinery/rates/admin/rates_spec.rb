@@ -4,17 +4,17 @@ require "spec_helper"
 describe Refinery do
   describe "Rates" do
     describe "Admin" do
-      describe "rates" do
+      describe "rate_tables" do
         refinery_login_with :refinery_user
 
         describe "rates list" do
           before do
-            FactoryGirl.create(:rate, :title => "UniqueTitleOne")
-            FactoryGirl.create(:rate, :title => "UniqueTitleTwo")
+            FactoryGirl.create(:rate_table, :title => "UniqueTitleOne")
+            FactoryGirl.create(:rate_table, :title => "UniqueTitleTwo")
           end
 
           it "shows two items" do
-            visit refinery.rates_admin_rates_path
+            visit refinery.rates_admin_rate_tables_path
             page.should have_content("UniqueTitleOne")
             page.should have_content("UniqueTitleTwo")
           end
@@ -22,7 +22,7 @@ describe Refinery do
 
         describe "create" do
           before do
-            visit refinery.rates_admin_rates_path
+            visit refinery.rates_admin_rate_tables_path
 
             click_link "Add New Rate"
           end
@@ -33,7 +33,7 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("'This is a test of the first string field' was successfully added.")
-              Refinery::Rates::Rate.count.should == 1
+              Refinery::Rates::RateTable.count.should == 1
             end
           end
 
@@ -42,15 +42,15 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("Title can't be blank")
-              Refinery::Rates::Rate.count.should == 0
+              Refinery::Rates::RateTable.count.should == 0
             end
           end
 
           context "duplicate" do
-            before { FactoryGirl.create(:rate, :title => "UniqueTitle") }
+            before { FactoryGirl.create(:rate_table, :title => "UniqueTitle") }
 
             it "should fail" do
-              visit refinery.rates_admin_rates_path
+              visit refinery.rates_admin_rate_tables_path
 
               click_link "Add New Rate"
 
@@ -58,17 +58,17 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("There were problems")
-              Refinery::Rates::Rate.count.should == 1
+              Refinery::Rates::RateTable.count.should == 1
             end
           end
 
         end
 
         describe "edit" do
-          before { FactoryGirl.create(:rate, :title => "A title") }
+          before { FactoryGirl.create(:rate_table, :title => "A title") }
 
           it "should succeed" do
-            visit refinery.rates_admin_rates_path
+            visit refinery.rates_admin_rate_tables_path
 
             within ".actions" do
               click_link "Edit this rate"
@@ -83,15 +83,15 @@ describe Refinery do
         end
 
         describe "destroy" do
-          before { FactoryGirl.create(:rate, :title => "UniqueTitleOne") }
+          before { FactoryGirl.create(:rate_table, :title => "UniqueTitleOne") }
 
           it "should succeed" do
-            visit refinery.rates_admin_rates_path
+            visit refinery.rates_admin_rate_tables_path
 
             click_link "Remove this rate forever"
 
             page.should have_content("'UniqueTitleOne' was successfully removed.")
-            Refinery::Rates::Rate.count.should == 0
+            Refinery::Rates::RateTable.count.should == 0
           end
         end
 

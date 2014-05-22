@@ -1,5 +1,8 @@
 <ul id='sortable_list'>
-  <%= render :partial => 'rate_table', :collection => @rate_tables %>
+  <% @rate_tables.to_a.group_by(&:category).each do |category, rate_tables| -%>
+    <h2><%= category %></h2>
+    <%= render :partial => 'rate_table', :collection => rate_tables %>
+  <% end -%>
 </ul>
 <%= render '/refinery/admin/sortable_list',
             :continue_reordering => (local_assigns.keys.include?(:continue_reordering)) ? continue_reordering : true %>
