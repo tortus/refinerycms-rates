@@ -18,7 +18,7 @@ nb:
             view_live_html: Vis hvordan denne rate ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
             edit: Rediger denne rate
             delete: Fjern denne rate permanent
-      rates:
+      rate_tables:
         show:
           other: Andre Rates
   activerecord:

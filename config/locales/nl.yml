@@ -18,7 +18,7 @@ nl:
             view_live_html: Deze rate op de website bekijken <br/><em>(opent in een nieuw venster)</em>
             edit: Bewerk deze rate
             delete: Deze rate definitief verwijderen
-      rates:
+      rate_tables:
         show:
           other: Andere Rates
   activerecord:

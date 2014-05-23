@@ -18,9 +18,9 @@ en:
             view_live_html: View this rate table live <br/><em>(opens in a new window)</em>
             edit: Edit this rate table
             delete: Remove this rate table forever
-      rates:
+      rate_tables:
         show:
-          other: Other Rate Tables
+          other: Other Rates
   activerecord:
     attributes:
       'refinery/rates/rate_table':

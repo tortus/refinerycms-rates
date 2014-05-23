@@ -18,7 +18,7 @@ cs:
             view_live_html: Zobrazit náhled rate<br/><em>(otevře se v novém okně)</em>
             edit: Upravit rate
             delete: Smazat rate
-      rates:
+      rate_tables:
         show:
           other: Další Rates
   activerecord:

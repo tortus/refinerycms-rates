@@ -18,7 +18,7 @@ it:
             view_live_html: Guarda live questo rate <br/><em>(apre una nuova finestra)</em>
             edit: Modifica questo rate
             delete: Rimuovi per sempre questo rate
-      rates:
+      rate_tables:
         show:
           other: Altri Rates
   activerecord:

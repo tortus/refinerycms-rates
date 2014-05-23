@@ -18,7 +18,7 @@ tr:
             view_live_html: Bunu canlu rate goruntule <br/><em>(yeni bir pencerede acar)</em>
             edit: Bunu Duzenle rate
             delete: Bunu Sil rate sonsuza dek
-      rates:
+      rate_tables:
         show:
           other: Diger Rates
   activerecord:

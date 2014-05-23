@@ -19,7 +19,7 @@ es:
             view_live_html: Ver este rate como abierto al público <br/><em>(abre en ventana nueva)</em>
             edit: Editar este rate
             delete: Borrar este rate para siempre
-      rates:
+      rate_tables:
         show:
           other: Otros rates
   activerecord:
