@@ -1,10 +1,13 @@
 <% content_for :body do %>
-  <ul id="rates">
-    <% @rate_tables.each do |rate_table| %>
-      <li>
-        <%= link_to rate_table.title, refinery.rates_rate_table_path(rate_table) %>
-      </li>
-    <% end %>
+  <% @rate_tables.group_by(&:category).each do |category, rate_tables| %>
+    <h2><%= category %></h2>
+    <ul class="rates">
+      <% rate_tables.each do |rate_table| %>
+        <li>
+          <%= link_to rate_table.title, refinery.rates_rate_table_path(rate_table) %>
+        </li>
+      <% end %>
+  <% end %>
   </ul>
 <% end %>
 

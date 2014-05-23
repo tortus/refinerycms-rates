@@ -4,35 +4,23 @@
 
 <% content_for :body do %>
   <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @rate_table.title %>
-    </p>
-  </section>
-  <section>
-    <h1>Category</h1>
-    <p>
-      <%=raw @rate_table.category %>
-    </p>
-  </section>
-  <section>
-    <h1>Content</h1>
-    <p>
-      <%=raw @rate_table.content %>
-    </p>
+    <%=raw @rate_table.content %>
   </section>
 <% end %>
 
 <% content_for :side_body do %>
   <aside>
     <h2><%= t('.other') %></h2>
-    <ul id="rates">
-      <% @rate_tables.each do |rate_table| %>
-        <li>
-          <%= link_to rate_table.title, refinery.rates_rate_table_path(rate_table) %>
-        </li>
-      <% end %>
-    </ul>
+    <% @rate_tables.group_by(&:category).each do |category, rate_tables| %>
+      <h3><%= category %></h3>
+      <ul id="rates">
+        <% @rate_tables.each do |rate_table| %>
+          <li>
+            <%= link_to rate_table.title, refinery.rates_rate_table_path(rate_table) %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </aside>
 <% end %>
 
