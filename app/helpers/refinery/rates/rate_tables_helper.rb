@@ -1,7 +1,7 @@
 # encoding: utf-8
 module Refinery
   module Rates
-    module RateTableHelper
+    module RateTablesHelper
 
       def replace_rate_tables(content)
         content.to_str.gsub(/\{\{rate_table\s+([\w\d_]+)}}/) { |match|
