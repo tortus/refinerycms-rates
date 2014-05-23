@@ -10,7 +10,7 @@
 
 <% content_for :side_body do %>
   <aside>
-    <h2><%= t('.other') %></h2>
+    <h2><%= link_to t('.other'), '/rates' %></h2>
     <% @rate_tables.group_by(&:category).each do |category, rate_tables| %>
       <h3><%= category %></h3>
       <ul id="rates">
