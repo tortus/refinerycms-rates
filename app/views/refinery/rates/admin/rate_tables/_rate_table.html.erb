@@ -1,8 +1,8 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(rate_table) -%>">
   <span class='title'>
-    <%= rate_table.title %>
-
+    <strong><%= rate_table.title %></strong>
   </span>
+  <%= rate_table.inline_replacement_tag %>
   <span class='actions'>
 
     <%= link_to refinery_icon_tag("application_go.png"), refinery.rates_rate_table_path(rate_table),

@@ -7,6 +7,8 @@ module Refinery
       engine_name :refinery_rates
 
       before_inclusion do
+        ::ApplicationController.helper(RatesHelper)
+
         Refinery::Plugin.register do |plugin|
           plugin.name = "rates"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.rates_admin_rate_tables_path }

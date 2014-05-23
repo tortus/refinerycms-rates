@@ -17,3 +17,25 @@ rails generate refinery:rates
 rake db:migrate
 rake db:seed
 ```
+
+## Using "Rates Anywhere"
+
+Ruby code (easiest):
+
+```erb
+<%= raw Refinery::Rates.content_for('auto-loans') %>
+```
+
+Adding liquid-style code inline in CMS:
+
+CMS:
+```html
+<p>Content</p>
+{{rate_table auto_loans}}
+<p>More content</p>
+```
+
+Override views/refinery/_content_page to use the helper:
+```erb
+<%= raw replace_rate_tables(@page.content_for('body')) %>
+```
