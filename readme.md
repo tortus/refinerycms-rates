@@ -1,10 +1,19 @@
-# Rates extension for Refinery CMS.
+# Rates extension for Refinery CMS 2.1.
 
-## How to build this extension as a gem
+Useful for banks and credit unions. Store rate tables
+as snippets of HTML then insert anywhere on the site.
 
-    cd vendor/extensions/rates
-    gem build refinerycms-rates.gemspec
-    gem install refinerycms-rates.gem
+## Installation
 
-    # Sign up for a http://rubygems.org/ account and publish the gem
-    gem push refinerycms-rates.gem
+Gemfile:
+```ruby
+gem 'refinerycms-rates', :github => 'tortus/refinerycms-rates', :branch => '2-1-stable'
+```
+
+Terminal:
+```sh
+bundle install
+rails generate refinery:rates
+rake db:migrate
+rake db:seed
+```
