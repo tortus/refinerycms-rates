@@ -5,11 +5,12 @@ module Refinery
 
       def replace_rate_tables(content)
         content.to_str.gsub(/(?:<p>\s*)?\{\{rate_table\s+([\w\d_]+)}}(?:\s*<\/p>)?/) { |match|
-          url = $1.gsub('_', '-')
+          underscore_url = $1
+          url = underscore_url.gsub('_', '-')
           content_tag(:div,
             raw(::Refinery::Rates.content_for(url)),
             :class => 'rate_table',
-            :id => "rate_table_#{$1}"
+            :id => "rate_table_#{underscore_url}"
           )
         }
       end
