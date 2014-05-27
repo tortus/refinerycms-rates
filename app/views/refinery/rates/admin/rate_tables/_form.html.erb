@@ -10,7 +10,7 @@
 
   <div class='field'>
     <label>Copy &amp; paste this code to insert in page content:</label>
-    <pre><%= @rate_table.inline_replacement_tag %></pre>
+    <pre><%= @rate_table.inline_replacement_tag.presence || 'N/A' %></pre>
   </div>
 
   <div class='field'>
