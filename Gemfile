@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gemspec
 
 gem 'refinerycms', '~> 2.1.0'
+gem 'acts_as_indexed', '~> 0.8.0'
 
 # Database Configuration
 platforms :jruby do
