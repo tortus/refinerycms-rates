@@ -88,7 +88,7 @@ describe Refinery do
           it "should succeed" do
             visit refinery.rates_admin_rate_tables_path
 
-            click_link "Remove this rate forever"
+            click_link "Remove this rate table forever"
 
             page.should have_content("'UniqueTitleOne' was successfully removed.")
             Refinery::Rates::RateTable.count.should == 0

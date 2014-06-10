@@ -5,8 +5,7 @@ module Refinery
     describe RateTable do
       describe "validations" do
         subject do
-          FactoryGirl.create(:rate_table,
-          :title => "Refinery CMS")
+          FactoryGirl.build(:rate_table, :title => "Refinery CMS")
         end
 
         it { should be_valid }
