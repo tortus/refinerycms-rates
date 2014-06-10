@@ -20,6 +20,7 @@ end
 
 group :development, :test do
   gem 'refinerycms-testing', '~> 2.1.0'
+  gem 'rspec-its'
 
   platforms :ruby do
     require 'rbconfig'
