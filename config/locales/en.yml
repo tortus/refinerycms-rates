@@ -10,6 +10,7 @@ en:
             create_new: Add New Rate Table
             reorder: Reorder Rate Tables
             reorder_done: Done Reordering Rate Tables
+            effective_date: "Effective date:"
           records:
             title: Rate Tables
             sorry_no_results: Sorry! There are no results found.

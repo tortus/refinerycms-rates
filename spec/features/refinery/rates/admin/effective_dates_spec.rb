@@ -12,7 +12,7 @@ describe Refinery do
 
           it "shows the effective date" do
             visit refinery.rates_admin_rate_tables_path
-            page.should have_content("Effective date: #{effective_date.effective_at.strftime('%B %-d, %Y %-l:%M %p')}")
+            page.should have_content("Effective date: #{effective_date.effective_at.strftime('%B %-d, %Y')}")
           end
         end
 

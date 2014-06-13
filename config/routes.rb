@@ -11,7 +11,15 @@ Refinery::Core::Engine.routes.draw do
     namespace :admin, :path => Refinery::Core.backend_route do
       scope :path => 'rates' do
         root :to => 'rate_tables#index'
+
         resources :rate_tables, :except => :show
+
+        scope :path => 'effective_date', :controller => 'effective_dates' do
+          root :to => '#index'
+          get :edit, :as => 'edit_effective_date'
+          put '', :to => '#update', :as => 'update_effective_date'
+        end
+
       end
     end
   end
