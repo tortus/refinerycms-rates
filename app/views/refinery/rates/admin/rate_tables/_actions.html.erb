@@ -23,6 +23,6 @@
   </li>
 <% end %>
   <li>
-    Effective date: <%= @effective_date.effective_at.to_s %>
+    Effective date: <%= @effective_date.effective_at.strftime('%B %-d, %Y %-l:%M %p') %>
   </li>
 </ul>
