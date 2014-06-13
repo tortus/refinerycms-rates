@@ -4,4 +4,7 @@
 <aside id='actions'>
   <%= render 'actions' %>
 </aside>
+<aside id='effective_date'>
+  <%= render 'effective_date' %>
+</aside>
 <%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::Rates::Admin::RateTablesController.sortable? and ::Refinery::Rates::RateTable.many? %>
