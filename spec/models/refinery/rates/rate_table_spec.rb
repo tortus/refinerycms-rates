@@ -23,6 +23,19 @@ module Refinery
           rate_table.inline_replacement_tag.should be_nil
         end
       end
+
+      it "update the global effective_date after a change" do
+        rate_table = FactoryGirl.create(:rate_table)
+        rate_table.content = "changed content"
+        EffectiveDate.any_instance.should_receive(:rate_table_changed).with(rate_table)
+        rate_table.save!
+      end
+
+      it "doesn't raise an exception if EffectiveDate.singleton returns nil" do
+        EffectiveDate.stub(:singleton) { nil }
+        rate_table = FactoryGirl.build(:rate_table)
+        expect { rate_table.save }.not_to raise_error
+      end
     end
   end
 end

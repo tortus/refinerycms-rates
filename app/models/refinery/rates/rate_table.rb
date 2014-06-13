@@ -13,6 +13,7 @@ module Refinery
       validates :category, :length => {:maximum => 255, allow_blank: true}
 
       after_save :invalidate_cache, :if => lambda { changed? }
+      after_save :update_effective_date, :if => lambda { changed? }
 
       def self.ordered
         order('category ASC, title ASC')
@@ -31,6 +32,12 @@ module Refinery
       def invalidate_cache
         Rails.cache.delete([self.class, to_param])
       end
+
+      private
+
+        def update_effective_date
+          EffectiveDate.singleton.try(:rate_table_changed, self)
+        end
 
     end
   end
