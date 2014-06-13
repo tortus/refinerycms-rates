@@ -7,6 +7,8 @@ module Refinery
 
       validates :effective_at, :presence => true
 
+      default_scope lambda { order(:id) }
+
       def inline_replacement_tag
         "{{rates_effective_date}}"
       end
