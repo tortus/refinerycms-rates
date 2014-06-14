@@ -3,7 +3,7 @@ module Refinery
     module RatesHelper
 
       def replace_rates_tags(content)
-        replace_effective_dates(replace_rate_tables(content))
+        replace_rates_effective_dates(replace_rate_tables(content))
       end
 
       def replace_rate_tables(content)
