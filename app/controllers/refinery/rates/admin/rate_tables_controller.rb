@@ -6,7 +6,7 @@ module Refinery
         before_filter :find_effective_date
 
         crudify :'refinery/rates/rate_table',
-                :xhr_paging => false,
+                :paging => false,
                 :order => 'category ASC, title ASC',
                 :sortable => false
 
