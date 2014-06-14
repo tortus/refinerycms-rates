@@ -7,8 +7,8 @@ module Refinery
       engine_name :refinery_rates
 
       before_inclusion do
-        ::ApplicationController.send :helper, Refinery::Rates::RateTablesHelper
-        Refinery::AdminController.send :helper, Refinery::Rates::RateTablesHelper
+        ::ApplicationController.send :helper, Refinery::Rates::RatesHelper
+        Refinery::AdminController.send :helper, Refinery::Rates::RatesHelper
       end
 
       initializer "refinery.rates register plugin" do

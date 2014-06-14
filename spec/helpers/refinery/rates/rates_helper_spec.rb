@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Refinery
   module Rates
-    describe RateTablesHelper do
+    describe RatesHelper do
 
       describe "#replace_rate_tables" do
         let(:rate_table) { FactoryGirl.create(:rate_table, :content => "test content") }
@@ -16,6 +16,18 @@ module Refinery
           result = helper.replace_rate_tables(content)
           result.should_not include("<p>")
           result.should_not include("</p>")
+        end
+      end
+
+      describe "#replace_rates_effective_dates" do
+        let(:effective_date) { FactoryGirl.create(:effective_date, :effective_at => Date.new(2000, 1, 1)) }
+        before do
+          EffectiveDate.stub(:singleton) { effective_date }
+        end
+
+        it "replaces {{rates_effective_date}} with the current effective date" do
+          content = "{{rates_effective_date}}"
+          helper.replace_rates_effective_dates(content).should == 'January 1, 2000'
         end
       end
 
