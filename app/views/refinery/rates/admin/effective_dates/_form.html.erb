@@ -4,10 +4,16 @@
               :include_object_name => true %>
 
   <div class='field'>
-    <%= f.label :effective_at -%>
-    <%= f.text_field :effective_at, :class => 'larger widest' -%>
+    <%= f.label :effective_at, "Rates effective date" -%>
+    <%= f.date_select :effective_at, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field' style='margin-bottom: 30px;'>
+    <label>Copy &amp; paste this code to insert in page content:</label>
+    <pre><%= @effective_date.inline_replacement_tag.presence || 'N/A' %></pre>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
+             :hide_delete => true,
              :continue_editing => false -%>
 <% end -%>
