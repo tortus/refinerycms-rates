@@ -28,3 +28,5 @@ en:
         title: Title
         category: Category
         content: Content
+      'refinery/rates/effective_date':
+        effective_at: Effective at

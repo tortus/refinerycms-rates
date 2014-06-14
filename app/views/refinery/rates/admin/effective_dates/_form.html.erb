@@ -1,0 +1,13 @@
+<%= form_for [refinery, :rates_admin, @effective_date] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @effective_date,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :effective_at -%>
+    <%= f.text_field :effective_at, :class => 'larger widest' -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false -%>
+<% end -%>

@@ -14,11 +14,7 @@ Refinery::Core::Engine.routes.draw do
 
         resources :rate_tables, :except => :show
 
-        scope :path => 'effective_date', :controller => 'effective_dates' do
-          root :to => '#index'
-          get :edit, :as => 'edit_effective_date'
-          put '', :to => '#update', :as => 'update_effective_date'
-        end
+        resource :effective_date, :only => [:show, :edit, :update]
 
       end
     end
