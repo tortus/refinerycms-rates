@@ -24,10 +24,12 @@ describe Refinery do
           end
 
           it "should succeed" do
-            fill_in "Effective at", with: Time.now
+            next_year = Time.now.year + 1
+            select(next_year, :from => "effective_date[effective_at(1i)]")
             click_button "Save"
 
             page.should have_content("Effective date was successfully updated.")
+            page.should have_content(effective_date_link_text.sub(/\d+\z/, next_year.to_s))
           end
         end
 
