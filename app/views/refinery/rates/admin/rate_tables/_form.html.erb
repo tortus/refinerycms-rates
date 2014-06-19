@@ -26,7 +26,7 @@
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
-             :continue_editing => false,
+             :continue_editing => true,
              :delete_title => t('delete', :scope => 'refinery.rates.admin.rates.rate_table'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @rate_table.title) -%>
 <% end -%>
