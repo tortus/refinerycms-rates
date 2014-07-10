@@ -17,6 +17,10 @@ module Refinery
           result.should_not include("<p>")
           result.should_not include("</p>")
         end
+
+        it "returns nil if content is nil" do
+          helper.replace_rate_tables(nil).should == nil
+        end
       end
 
       describe "#replace_rates_effective_dates" do
@@ -28,6 +32,10 @@ module Refinery
         it "replaces {{rates_effective_date}} with the current effective date" do
           content = "{{rates_effective_date}}"
           helper.replace_rates_effective_dates(content).should == 'January 1, 2000'
+        end
+
+        it "returns nil if content is nil" do
+          helper.replace_rate_tables(nil).should == nil
         end
       end
 
