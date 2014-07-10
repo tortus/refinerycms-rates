@@ -15,12 +15,14 @@ module Refinery
             :class => 'rate_table',
             :id => "rate_table_#{underscore_url}"
           )
-        }
+        } if content
       end
 
       def replace_rates_effective_dates(content)
-        effective_at = ::Refinery::Rates::EffectiveDate.singleton.effective_at.strftime('%B %-d, %Y')
-        content.to_str.gsub('{{rates_effective_date}}', effective_at)
+        if content
+          effective_at = ::Refinery::Rates::EffectiveDate.singleton.effective_at.strftime('%B %-d, %Y')
+          content.to_str.gsub('{{rates_effective_date}}', effective_at)
+        end
       end
 
     end
