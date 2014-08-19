@@ -2,11 +2,11 @@ namespace :refinery do
 
   namespace :rates do
 
-    # call this task by running: rake refinery:rates:my_task
-    # desc "Description of my task below"
-    # task :my_task => :environment do
-    #   # add your logic here
-    # end
+    desc "change effective date to today"
+    task :update_effective_date => :environment do
+      effective_date = ::Refinery::Rates::EffectiveDate.singleton
+      effective_date.update!(:effective_at => Date.today)
+    end
 
   end
 
