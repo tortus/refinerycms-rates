@@ -37,5 +37,5 @@ CMS:
 
 Override views/refinery/_content_page to use the helper:
 ```erb
-<%= raw replace_rate_tables(@page.content_for('body')) %>
+<%= raw replace_rates_tags(@page.content_for('body')) %>
 ```
