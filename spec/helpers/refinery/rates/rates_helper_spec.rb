@@ -37,6 +37,12 @@ module Refinery
         it "returns nil if content is nil" do
           helper.replace_rate_tables(nil).should == nil
         end
+
+        it "replaces {{rates_effective_date}} with 'N/A' if the effective date is nil for some reason" do
+          singleton = double("EffectiveDate", effective_at: nil)
+          EffectiveDate.stub(:singleton) { singleton }
+          helper.replace_rates_effective_dates("{{rates_effective_date}}").should == "N/A"
+        end
       end
 
     end

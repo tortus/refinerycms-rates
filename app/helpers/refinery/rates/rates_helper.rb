@@ -22,7 +22,7 @@ module Refinery
 
       def replace_rates_effective_dates(content)
         if content
-          effective_at = ::Refinery::Rates::EffectiveDate.singleton.effective_at.strftime('%B %-d, %Y')
+          effective_at = ::Refinery::Rates::EffectiveDate.singleton.effective_at.try(:strftime, '%B %-d, %Y') || "N/A"
           content.to_str.gsub('{{rates_effective_date}}', effective_at)
         end
       end
