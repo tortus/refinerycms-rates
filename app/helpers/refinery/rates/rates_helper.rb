@@ -2,6 +2,8 @@ module Refinery
   module Rates
     module RatesHelper
 
+      # Because dates are replaced after rates, it is possible to place the effective date
+      # tag within a rate table.
       def replace_rates_tags(content)
         replace_rates_effective_dates(replace_rate_tables(content))
       end
