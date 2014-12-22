@@ -33,6 +33,12 @@ module Refinery
         Rails.cache.delete([self.class, to_param])
       end
 
+      def self.find_with_cache(url)
+        Rails.cache.fetch([::Refinery::Rates::RateTable, url]) {
+          ::Refinery::Rates::RateTable.find(url)
+        }
+      end
+
       private
 
         def update_effective_date

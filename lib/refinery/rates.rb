@@ -25,9 +25,7 @@ module Refinery
       #
       def content_for(url)
         begin
-          rate_table = Rails.cache.fetch([::Refinery::Rates::RateTable, url]) {
-            ::Refinery::Rates::RateTable.find(url)
-          }
+          rate_table = ::Refinery::Rates::RateTable.find_with_cache(url)
           rate_table.content
         rescue ::ActiveRecord::RecordNotFound
           %([Rate table "#{url}" not found.])
