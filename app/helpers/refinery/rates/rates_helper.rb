@@ -24,7 +24,7 @@ module Refinery
           else
             content_tag(:div, :class => 'rate_table', :id => "rate_table_#{underscore_url}") do
               buffer = ActiveSupport::SafeBuffer.new
-              buffer << content_tag(:a, nil, :id => url) if anchor
+              buffer << content_tag(:a, nil, :id => url, :class => "anchor") if anchor
               if rate_table
                 buffer << rate_table.content.html_safe
               else
