@@ -5,7 +5,7 @@ module Refinery
     describe RatesHelper do
 
       describe "#replace_rate_tables" do
-        let(:rate_table) { FactoryGirl.create(:rate_table, :content => "test content") }
+        let(:rate_table) { FactoryGirl.create(:rate_table, :content => "<em>test content</em>") }
         it "replaces {{rate_table underscored_slug}} with the rate_table's content surrounded by a container div" do
           content = "{{rate_table #{rate_table.to_param.to_s.underscore}}}"
           helper.replace_rate_tables(content).should == %(<div class="rate_table" id="rate_table_#{rate_table.to_param.to_s.underscore}"><a id="#{rate_table.to_param}"></a>#{rate_table.content}</div>)
@@ -20,6 +20,12 @@ module Refinery
 
         it "returns nil if content is nil" do
           helper.replace_rate_tables(nil).should == nil
+        end
+
+        it "replaces tag with '[Rate table \"url\" not found.]' if rate table doesn't exist" do
+          content = "<p>{{rate_table test}}</p>"
+          result = helper.replace_rate_tables(content)
+          result.should include("[Rate table &quot;test&quot; not found.]")
         end
       end
 
