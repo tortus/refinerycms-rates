@@ -27,7 +27,7 @@ module Refinery
       end
 
       def self.singleton
-        first || create!(:effective_at => Time.now)
+        first || create!(:effective_at => Time.zone.now)
       end
 
       def self.effective_at

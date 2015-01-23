@@ -35,8 +35,8 @@ module Refinery
 
       describe "#rate_table_changed" do
         it "updates #effective_at with the rate_table's updated_at timestamp" do
-          old_date = Time.now - 1.hour
-          new_date = Time.now
+          old_date = 1.hour.ago
+          new_date = Time.zone.now
           effective_date = FactoryGirl.create(:effective_date, :effective_at => old_date)
           rate_table = FactoryGirl.build(:rate_table, :updated_at => new_date)
           expect {

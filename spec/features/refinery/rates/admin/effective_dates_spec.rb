@@ -24,13 +24,15 @@ describe Refinery do
           end
 
           it "should succeed" do
-            next_year = Time.now.year + 1
-            select(next_year, :from => "effective_date[effective_at(1i)]")
+            next_year = 1.year.from_now
+            select(next_year.year, :from => "effective_date[effective_at(1i)]")
+            select(next_year.strftime("%B"), :from => "effective_date[effective_at(2i)]")
+            select(next_year.strftime("%-d"), :from => "effective_date[effective_at(3i)]")
             click_button "Save"
 
             current_path.should == refinery.rates_admin_root_path
             page.should have_content("Effective date was successfully updated.")
-            page.should have_content(effective_date_link_text.sub(/\d+\z/, next_year.to_s))
+            page.should have_content(effective_date_link_text.sub(/\d+\z/, next_year.year.to_s))
           end
         end
 

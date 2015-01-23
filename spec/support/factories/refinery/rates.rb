@@ -5,7 +5,7 @@ FactoryGirl.define do
   end
 
   factory :effective_date, :class => Refinery::Rates::EffectiveDate do
-    effective_at { Time.now }
+    effective_at { Time.zone.now }
   end
 end
 
