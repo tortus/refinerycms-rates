@@ -18,8 +18,12 @@ module Refinery
 
       default_scope lambda { order(:id) }
 
-      def inline_replacement_tag
+      def self.inline_replacement_tag
         "{{rates_effective_date}}"
+      end
+
+      def inline_replacement_tag
+        self.class.inline_replacement_tag
       end
 
       def rate_table_changed(rate_table)
