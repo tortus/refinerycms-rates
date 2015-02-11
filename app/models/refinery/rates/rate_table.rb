@@ -13,6 +13,7 @@ module Refinery
       validates :category, :length => {:maximum => 255, allow_blank: true}
 
       after_save :invalidate_cache
+      after_destroy :invalidate_cache
       after_save :update_effective_date, :if => lambda { changed? }
 
       def self.ordered
