@@ -24,7 +24,7 @@ module Refinery
         "{{rate_table #{to_param.to_s.underscore}}}" if persisted?
       end
 
-      CATEGORIES = ['Personal Checking', 'Personal Savings', 'Business Checking', 'Business Savings', 'Dividend Rates', 'Loan Rates', 'Mortgage Rates']
+      CATEGORIES = ['Personal Checking', 'Personal Savings', 'Business Checking', 'Business Savings', 'Deposit Rates', 'Dividend Rates', 'Loan Rates', 'Mortgage Rates']
 
       def category_options
         CATEGORIES
