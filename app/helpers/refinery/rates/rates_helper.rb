@@ -4,8 +4,11 @@ module Refinery
 
       # Because dates are replaced after rates, it is possible to place the effective date
       # tag within a rate table.
-      def replace_rates_tags(content, anchor: true, &block)
-        replace_rates_effective_dates(replace_rate_tables(content, anchor: anchor, &block))
+      def replace_rates_tags(content, anchor: true, effective_date: nil, &block)
+        replace_rates_effective_dates(
+          replace_rate_tables(content, anchor: anchor, &block),
+          replacement: effective_date
+        )
       end
 
       def replace_rate_tables(content, anchor: true)
@@ -38,10 +41,18 @@ module Refinery
         } if content
       end
 
-      def replace_rates_effective_dates(content)
+      def replace_rates_effective_dates(content, replacement: nil)
         if content
-          effective_at = ::Refinery::Rates::EffectiveDate.singleton.effective_at.try(:strftime, '%B %-d, %Y') || "N/A"
-          content.to_str.gsub(::Refinery::Rates::EffectiveDate.inline_replacement_tag, effective_at)
+          effective_date = ::Refinery::Rates::EffectiveDate.singleton
+          if replacement.respond_to?(:call)
+            replacement = replacement.call(effective_date)
+          elsif !replacement.nil?
+            replacement = replacement.to_s
+          else
+            replacement = effective_date.effective_at.try(:strftime, '%B %-d, %Y') || "N/A"
+          end
+          replacement ||= ""
+          content.to_str.gsub(::Refinery::Rates::EffectiveDate.inline_replacement_tag, replacement)
         end
       end
 

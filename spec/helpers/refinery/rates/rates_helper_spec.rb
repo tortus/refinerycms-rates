@@ -49,6 +49,25 @@ module Refinery
           EffectiveDate.stub(:singleton) { singleton }
           helper.replace_rates_effective_dates("{{rates_effective_date}}").should == "N/A"
         end
+
+        context "when replacement is a Proc" do
+          it "replaces {{rates_effective_date}} with the return value of the Proc" do
+            replacement = Proc.new { "test" }
+            helper.replace_rates_effective_dates("{{rates_effective_date}}", replacement: replacement).should == "test"
+          end
+          it "passes the EffectiveDate singleton instance to the Proc" do
+            effective_date.save
+            replacement = Proc.new { |date| "test" }
+            replacement.should_receive(:call).with(effective_date).and_return("test")
+            helper.replace_rates_effective_dates("{{rates_effective_date}}", replacement: replacement)
+          end
+        end
+
+        context "when replacement is a String" do
+          it "replaces {{rates_effective_date}} with the String" do
+            helper.replace_rates_effective_dates("{{rates_effective_date}}", replacement: "test").should == "test"
+          end
+        end
       end
 
     end
